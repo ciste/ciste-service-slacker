@@ -1,9 +1,9 @@
 (ns ciste.service.slacker
-  (:use [ciste.config :only [config describe-config]]
-        [slacker.client :only [defn-remote slackerc]]
-        [slacker.server :only [start-slacker-server]]
-        [slacker.client.common :only [invoke-slacker]])
-  (:require [clojure.tools.logging :as log]))
+  (:require [ciste.config :refer [config describe-config]]
+            [clojure.tools.logging :as log]
+            [slacker.client :refer [defn-remote slackerc]]
+            [slacker.server :refer [start-slacker-server]]
+            [slacker.client.common :refer [invoke-slacker]]))
 
 (describe-config [:slacker :port] :number
   "The port the slacker connection should run on")
